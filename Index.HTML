@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Material Escolar Tepetitla - Profesional</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#c00000" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <button id="btnMenu" aria-label="Abrir menú" class="btn-hamburguesa">☰</button>
+            <h1 class="header-title">Material Escolar Tepetitla</h1>
+            <div class="header-user">
+                <span id="nombreUsuario">Usuario</span>
+                <span class="user-icon">👤</span>
+            </div>
+            <button id="themeToggleBtn" aria-label="Cambiar tema">🌙</button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside id="sidebar" class="sidebar">
+            <nav class="filtros-nav">
+                <h2>Filtros</h2>
+                <div class="search-container">
+                    <input type="text" id="buscador" placeholder="Buscar producto..." aria-label="Buscador de productos" />
+                    <div id="searchSuggestions" class="suggestions-container"></div>
+                </div>
+                <label for="categoriaFiltro">Categorías</label>
+                <select id="categoriaFiltro" aria-label="Filtrar por categoría">
+                    <option value="todos">Todas</option>
+                    <option value="utiles">Útiles escolares</option>
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="otros">Otros</option>
+                </select>
+                <div class="nav-extras">
+                    <button id="historialPedidosBtn">📄 Historial de Pedidos</button>
+                    <button id="verCarritosGuardadosBtn">🛒 Carritos Guardados</button>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="productosVistos" class="productos-vistos-container">
+                <h2>Vistos recientemente</h2>
+                <div id="vistosRecientemente" class="catalogo-reducido"></div>
+            </section>
+            
+            <section id="catalogo" class="catalogo"></section>
+        </main>
+    </div>
+
+    <button id="abrirCarrito" class="btn-carrito" aria-label="Abrir carrito de compras">🛒 Carrito <span id="contadorCarrito">0</span></button>
+
+    <aside id="carritoFlotante" class="carrito-offcanvas">
+        <div class="carrito-header">
+            <h2>🛍️ Mi Carrito</h2>
+            <button id="cerrarCarritoBtn" aria-label="Cerrar carrito">❌</button>
+        </div>
+        <div id="contenidoCarrito"><p>Tu carrito está vacío.</p></div>
+        <div class="carrito-info">
+            <p id="infoDescuento"></p>
+            <p id="infoEnvio"></p>
+        </div>
+        <div class="carrito-footer">
+            <p>Total: $<span id="carritoTotal">0.00</span></p>
+            <button id="guardarCarritoBtn">💾 Guardar Carrito</button>
+            <button id="enviarPedidoBtn">📲 Enviar por WhatsApp</button>
+        </div>
+    </aside>
+
+    <div id="modalImagen" class="modal oculto" role="dialog" aria-modal="true">
+        <span id="cerrarModal" class="cerrar" aria-label="Cerrar imagen">&times;</span>
+        <img id="imagenModal" alt="Imagen del producto ampliada" />
+    </div>
+
+    <div id="modalHistorial" class="modal oculto" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Historial de Pedidos</h2>
+                <span id="cerrarHistorialModal" class="cerrar" aria-label="Cerrar historial">&times;</span>
+            </div>
+            <div id="contenidoHistorial"></div>
+            <p class="total-gastado">Total gastado: $<span id="totalGastado">0.00</span></p>
+        </div>
+    </div>
+    
+    <div id="modalCarritosGuardados" class="modal oculto" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carritos Guardados</h2>
+                <span id="cerrarCarritosGuardadosModal" class="cerrar" aria-label="Cerrar carritos guardados">&times;</span>
+            </div>
+            <div id="contenidoCarritosGuardados"></div>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+    
+    <div id="encuestaContainer" class="encuesta oculto">
+        <h4>¿Qué te pareció tu experiencia?</h4>
+        <button data-voto="buena">👍 Buena</button>
+        <button data-voto="regular">😐 Regular</button>
+        <button data-voto="mala">👎 Mala</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <h3>Contacto Rápido</h3>
+            <p>¿Dudas? ¡Escríbenos!</p>
+            <a href="https://wa.me/522481602590" target="_blank" rel="noopener" class="btn-whatsapp-footer">💬 WhatsApp</a>
+        </div>
+        <div class="footer-map">
+            <h3>Nuestra Ubicación</h3>
+            <p>Tepetitla de Lardizábal, Tlaxcala, México.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>
