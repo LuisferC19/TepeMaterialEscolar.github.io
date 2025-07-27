@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarToast('Tu carrito está vacío.', 'error');
             return;
         }
-        let mensaje = `¡Hola ${appState.user.nombre}! Quisiera hacer el siguiente pedido:\n\n`;
+        let mensaje = `¡Hola!...\n Soy ${appState.user.nombre} quisiera hacer el siguiente pedido:\n\n`;
         let total = 0;
         appState.carrito.forEach(item => {
             mensaje += `- ${item.nombre} (x${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}\n`;
