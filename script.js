@@ -3,14 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- BASE DE DATOS DE PRODUCTOS ---
     const productos = [
         { id: 1, nombre: "Audífonos Inalámbricos", precio: 350, imagen: "img/Audifonos.jpg", categoria: "tecnologia", stock: 15, initialStock: 15 },
-        { id: 2, nombre: "Calculadora Científica", precio: 280, imagen: "img/Calculadora.png", categoria: "utiles", stock: 25, initialStock: 25 },
-        { id: 3, nombre: "Cargador de iPhone", precio: 250, imagen: "img/Cargador-iphone.png", categoria: "tecnologia", stock: 20, initialStock: 20 },
-        { id: 4, nombre: "Goma de Borrar", precio: 5, imagen: "img/Goma.png", categoria: "utiles", stock: 100, initialStock: 100 },
-        { id: 5, nombre: "Lápiz de Grafito", precio: 8, imagen: "img/Lapiz.png", categoria: "utiles", stock: 150, initialStock: 150 },
-        { id: 6, nombre: "Lapicero Tinta Negra", precio: 10, imagen: "img/Lapicero.png", categoria: "utiles", stock: 120, initialStock: 120 },
-        { id: 7, nombre: "Libreta Profesional", precio: 45, imagen: "img/Libretas.png", categoria: "utiles", stock: 50, initialStock: 50 },
-        { id: 8, nombre: "Mochila Escolar", precio: 450, imagen: "img/Mochila.png", categoria: "otros", stock: 10, initialStock: 10 },
-        { id: 9, nombre: "Plato de Cerámica", precio: 120, imagen: "img/Plato-ceramica.png", categoria: "otros", stock: 30, initialStock: 30 }
+        { id: 2, nombre: "Calculadora Científica", precio: 280, imagen: "img/Calculadora.jpg", categoria: "utiles", stock: 25, initialStock: 25 },
+        { id: 3, nombre: "Cargador de iPhone", precio: 250, imagen: "img/Cargador-iphone.jpg", categoria: "tecnologia", stock: 20, initialStock: 20 },
+        { id: 4, nombre: "Goma de Borrar", precio: 5, imagen: "img/Goma.jpg", categoria: "utiles", stock: 100, initialStock: 100 },
+        { id: 5, nombre: "Lápiz de Grafito", precio: 8, imagen: "img/Lapiz.jpg", categoria: "utiles", stock: 150, initialStock: 150 },
+        { id: 6, nombre: "Lapicero Tinta Negra", precio: 10, imagen: "img/Lapizero.jpg", categoria: "utiles", stock: 120, initialStock: 120 },
+        { id: 7, nombre: "Libreta Profesional", precio: 45, imagen: "img/Libretas.jpg", categoria: "utiles", stock: 50, initialStock: 50 },
+        { id: 8, nombre: "Mochila Escolar", precio: 450, imagen: "img/Mochila.jpg", categoria: "otros", stock: 10, initialStock: 10 },
+        { id: 9, nombre: "Plato de Cerámica", precio: 120, imagen: "img/Plato-ceramica.jpg", categoria: "otros", stock: 30, initialStock: 30 }
     ];
 
     // --- ESTADO GLOBAL DE LA APLICACIÓN ---
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let total = 0;
         let totalItems = 0;
         let descuento = 0;
-        const MONTO_ENVIO_GRATIS = 500;
+        const MONTO_ENVIO_GRATIS = 100;
 
         const libretasEnCarrito = appState.carrito.find(item => item.nombre === "Libreta Profesional");
         if (libretasEnCarrito && libretasEnCarrito.cantidad >= 3) {
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
             mostrarToast('Tu carrito está vacío.', 'error');
             return;
         }
-        let mensaje = `¡Hola!...\n Soy ${appState.user.nombre} quisiera hacer el siguiente pedido:\n\n`;
+        let mensaje = `¡Hola! Soy ${appState.user.nombre}, quisiera hacer el siguiente pedido:\n\n`;
         let total = 0;
         appState.carrito.forEach(item => {
             mensaje += `- ${item.nombre} (x${item.cantidad}) - $${(item.precio * item.cantidad).toFixed(2)}\n`;
